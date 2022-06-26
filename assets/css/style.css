@@ -136,10 +136,12 @@ body {
     padding:12px 6px;
     font-weight:600;
     cursor:default;
+    text-transform: uppercase;
 }
 .les-row .menulist ul .chap-item{
     color:#444;
-    padding:8px 6px;
+    padding:3px 6px;
+    font-size: small;
 }
 
 .les-row .menulist ul .active{
@@ -442,4 +444,8 @@ button.close{
     text-decoration: none;
     /* display: block;
     width: 100%; */
+}
+.bdy {
+    background-image: url("../img/logo_bg.png");
+    background-size: cover;
 }
