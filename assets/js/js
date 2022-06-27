@@ -3,14 +3,32 @@
 // Copyright 2012 Google Inc. All rights reserved.
 (function(){
 
-  
+  //Highlight the active link
   var url = window.location.href;
     $('ul li a.mitem').each(function(idx, itm){
       $(itm).removeClass('active');
       if(url==itm.href) {
         $(itm).addClass('active');
+
+        //Move selected sidebar item to top. 
+        var $container = $('.simplebar-content-wrapper');
+        var $scrollTo = $(itm);
+        $container.animate({
+            scrollTop: $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
+        });
       }
     });
+
+    $('.print-page').click(function() { console.log("Printing...");
+      var printContents = document.getElementById('print_area').innerHTML;
+      var originalContents = document.body.innerHTML;
+ 
+      document.body.innerHTML = printContents;
+ 
+      window.print();
+ 
+      document.body.innerHTML = originalContents;
+ });
 
 
 })()
